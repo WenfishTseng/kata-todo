@@ -1,0 +1,107 @@
+{
+	"info": {
+		"_postman_id": "d29c3d48-ea6f-4b1b-9fdd-39501178a28d",
+		"name": "kata-todo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13760542"
+	},
+	"item": [
+		{
+			"name": "查詢代辦",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "新增代辦",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"title\":\"apple\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://kata-todo.onrender.com/todos",
+					"protocol": "https",
+					"host": [
+						"kata-todo",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "修改代辦",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"title\":\"cat\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://kata-todo.onrender.com/todo/b4898ad5-b403-4623-81af-dedb592ed5d9",
+					"protocol": "https",
+					"host": [
+						"kata-todo",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"todo",
+						"b4898ad5-b403-4623-81af-dedb592ed5d9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "查詢代辦",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://kata-todo.onrender.com/todo/b4898ad5-b403-4623-81af-dedb592ed5d9",
+					"protocol": "https",
+					"host": [
+						"kata-todo",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"todo",
+						"b4898ad5-b403-4623-81af-dedb592ed5d9"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
