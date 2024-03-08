@@ -30,7 +30,7 @@ const requestListener = (req, res) => {
       try {
         const title = JSON.parse(body).title;
         const todo = { title, id: uuid() };
-        todos.push(todo);
+        todos.push(todo); // 資料推至本地
         // 回傳資料
         res.writeHeader(200, headers);
         res.write(
@@ -47,11 +47,11 @@ const requestListener = (req, res) => {
   } else if (req.method == 'PATCH' && req.url.startsWith('/todo/')) {
     // 修改
     req.on('end', () => {
-      const id = req.url.split('/').pop();
-      const newTitle = JSON.parse(body).title;
-      const index = todos.findIndex((todo) => todo.id == id);
+      const id = req.url.split('/').pop(); // 取得網誌上的待改id
+      const newTitle = JSON.parse(body).title; // 取得更新標題
+      const index = todos.findIndex((todo) => todo.id == id); // 取得索引
       if (newTitle != undefined && index != -1) {
-        todos[index].title = newTitle;
+        todos[index].title = newTitle; // 更新該項目
         res.writeHeader(200, headers);
         res.write(
           JSON.stringify({
@@ -69,7 +69,7 @@ const requestListener = (req, res) => {
     const id = req.url.split('/').pop();
     const index = todos.findIndex((todo) => todo.id == id);
     if (index != -1) {
-      todos.splice(index, 1);
+      todos.splice(index, 1); // 刪除該項目
       res.writeHeader(200, headers);
       res.write(
         JSON.stringify({
